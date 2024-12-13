@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      .sidebar {
+        position: absolute;
+        width: 220px;
+        transform: translateX(100%);
+        background-color: #fff;
+        padding: 2rem;
+        z-index: 999;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding-top: 5rem;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .sembunyi {
+        transform: translateX(100%);
+      }
+
+      .muncul {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <i class="fa-solid fa-bars" id="menu"></i>
+
+    <div class="sidebar sembunyi">
+      <a href="#">Berita Anime</a>
+      <a href="#">Berita Manhwa</a>
+      <a href="#">Berita Manga</a>
+      <a href="#">Berita Manhua</a>
+    </div>
+    <script>
+      const menu = document.getElementById("menu");
+      const sideBar = document.querySelector(".sidebar");
+
+      menu.addEventListener("click", function () {
+        if (sideBar.classList.contains("sembunyi")) {
+          sideBar.classList.remove("sembunyi");
+          sideBar.classList.add("muncul");
+          console.log("ada");
+        } else {
+          sideBar.classList.remove("muncul");
+          sideBar.classList.add("sembunyi");
+        }
+      });
+
+      //   document.addEventListener("click", function (evt) {
+      //     if (!sideBar.contains(evt.target)) {
+      //       sideBar.classList.add("sembunyi");
+      //       sideBar.classList.remove("muncul");
+      //     }
+      //   });
+    </script>
+  </body>
+</html>
